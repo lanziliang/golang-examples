@@ -1,30 +1,12 @@
-package main
+// 概率池
+package algorithm
 
 import (
 	"math/rand"
-	"fmt"
 )
 
-func main() {
-	proArr := make(map[string]int)
-	proArr["1"] = 100
-	proArr["2"] = 200
-	proArr["3"] = 300
-	proArr["4"] = 400
-
-	am := NewProbability(proArr)
-
-	// test ...
-	sts := make(map[string]int)
-	for i := 0; i < 10000000; i++ {
-		sts[am.GetRand()]++
-	}
-
-	fmt.Println(sts)
-}
-
 type Probability struct {
-	proArr map[string]int
+	proArr map[string]int  // 概率配置
 	proSum int
 }
 
@@ -41,6 +23,7 @@ func (r *Probability) sum() {
 	}
 }
 
+// 随机获取元素
 func (r *Probability) GetRand() (key string) {
 	r.sum()
 

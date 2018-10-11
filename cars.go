@@ -6,18 +6,19 @@ import (
 )
 
 type Any interface{}
+
 type Car struct {
-	Model       string
-	Manufacturer    string
-	BuildYear   int
+	Model        string
+	Manufacturer string
+	BuildYear    int
 	// ...
 }
 type Cars []*Car
 
 func main() {
 	// make some cars:
-	ford := &Car{"Fiesta","Ford", 2008}
-	bmw  := &Car{"XL 450", "BMW", 2011}
+	ford := &Car{"Fiesta", "Ford", 2008}
+	bmw := &Car{"XL 450", "BMW", 2011}
 	merc := &Car{"D600", "Mercedes", 2009}
 	bmw2 := &Car{"X 800", "BMW", 2008}
 	// query:
